@@ -16,4 +16,7 @@
 -->
 <resources>
     <color name="reticker_background_color">@android:color/system_neutral1_900</color>
+
+     <!-- Power Menu Lite-->
+    <dimen name="global_actions_light_icon_padding">32dp</dimen>
 </resources>
