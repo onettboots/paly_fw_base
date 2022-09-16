@@ -5558,7 +5558,12 @@ public final class Settings {
         public static final String RETICKER_COLORED = "reticker_colored";
 
         /**
-        * Whether to show the battery info on the lockscreen while charging
+         * Restyled reTicker
+         * @hide
+         */
+        public static final String NEW_RETICKER = "new_reticker";
+
+        /**
          * @hide
          */
         public static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";

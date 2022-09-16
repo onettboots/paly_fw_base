@@ -23,4 +23,6 @@
     
     <color name="volume_row_bg">@android:color/system_accent2_200</color>
     <color name="surface_aqua">@color/surface_aqua_light</color>
+
+    <color name="reticker_background_color">@android:color/system_neutral1_900</color>
 </resources>
