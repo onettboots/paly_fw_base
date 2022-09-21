@@ -193,6 +193,10 @@ public final class BatteryService extends SystemService {
     private boolean mHasTurboPower;
     private boolean mLastTurboPower;
 
+    private boolean mOemCharger;
+    private boolean mHasOemCharger;
+    private boolean mLastOemCharger;
+
     private long mDischargeStartTime;
     private int mDischargeStartLevel;
 
@@ -246,6 +250,9 @@ public final class BatteryService extends SystemService {
                 com.android.internal.R.bool.config_hasSuperDartCharger);
         mHasTurboPower = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_hasTurboPowerCharger);
+        mHasOemCharger = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_hasOemCharger);
+
         mCriticalBatteryLevel = mContext.getResources().getInteger(
                 com.android.internal.R.integer.config_criticalBatteryWarningLevel);
         mLowBatteryWarningLevel = mContext.getResources().getInteger(
@@ -529,7 +536,7 @@ public final class BatteryService extends SystemService {
         traceEnd();
     }
 
-    private static int plugType(HealthInfo healthInfo) {
+    private int plugType(HealthInfo healthInfo) {
         if (healthInfo.chargerAcOnline) {
             return BatteryManager.BATTERY_PLUGGED_AC;
         } else if (healthInfo.chargerUsbOnline) {
@@ -593,6 +600,7 @@ public final class BatteryService extends SystemService {
         mWarpCharger = mHasWarpCharger && (isWarpCharger() || isOemCharger());
         mVoocCharger = mHasVoocCharger && (isVoocCharger() || isOemCharger());
         mTurboPower = mHasTurboPower && (isTurboPower() || isOemCharger());
+        mOemCharger = mHasOemCharger && isOemCharger();
 
         if (force
                 || (mHealthInfo.batteryStatus != mLastBatteryStatus
@@ -614,8 +622,8 @@ public final class BatteryService extends SystemService {
                         || mDashCharger != mLastDashCharger
                         || mWarpCharger != mLastWarpCharger
                         || mVoocCharger != mLastVoocCharger
-                        || mTurboPower != mLastTurboPower)) {
-
+                        || mTurboPower != mLastTurboPower
+                        || mOemCharger != mLastOemCharger)) {
             if (mPlugType != mLastPlugType) {
                 if (mLastPlugType == BATTERY_PLUGGED_NONE) {
                     // discharging -> charging
@@ -797,6 +805,7 @@ public final class BatteryService extends SystemService {
             mLastWarpCharger = mWarpCharger;
             mLastVoocCharger = mVoocCharger;
             mLastTurboPower = mTurboPower;
+            mLastOemCharger = mOemCharger;
         }
     }
 
@@ -838,6 +847,7 @@ public final class BatteryService extends SystemService {
         intent.putExtra(BatteryManager.EXTRA_WARP_CHARGER, mWarpCharger);
         intent.putExtra(BatteryManager.EXTRA_VOOC_CHARGER, mVoocCharger);
         intent.putExtra(BatteryManager.EXTRA_TURBO_POWER, mTurboPower);
+        intent.putExtra(BatteryManager.EXTRA_OEM_FAST_CHARGER, mOemCharger);
         if (DEBUG) {
             Slog.d(TAG, "Sending ACTION_BATTERY_CHANGED. scale:" + BATTERY_SCALE
                     + ", info:" + mHealthInfo.toString());
