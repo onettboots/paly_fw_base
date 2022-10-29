@@ -108,4 +108,5 @@
     <color name="people_tile_background">@color/material_dynamic_secondary20</color>
 
     <color name="volume_row_bg">@android:color/system_accent2_600</color>
+    <color name="surface_aqua">@color/surface_aqua_dark</color>
 </resources>
