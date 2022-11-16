@@ -50,7 +50,8 @@ public class PixelPropsUtils {
             "com.google.android.as",
             "com.google.android.apps.privacy.wildlife",
             "com.google.android.apps.subscriptions.red",
-            "com.google.android.inputmethod.latin"
+            "com.google.android.inputmethod.latin",
+            "com.google.android.googlequicksearchbox"
     };
 
     private static final String[] packagesToChangePixelXL = {
