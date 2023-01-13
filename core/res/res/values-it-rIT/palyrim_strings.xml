@@ -19,4 +19,6 @@
     <string name="aerr_copy">Copia l\'URL del log di crash</string>
     <string name="url_copy_success">URL copiato con successo</string>
     <string name="url_copy_failed">Si è verificato un errore durante il caricamento del file log su Memochō</string>
+    <!-- Face unlock -->
+    <string name="face_unlock_disabled_idle">Face unlock disabled due to inactivity</string>
 </resources>

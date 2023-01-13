@@ -16,8 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Pengisian Daya Cepat Dash (<xliff:g id="charging_time_left" example="4 jam 2 menit">%1$s</xliff:g> hingga penuh)</string>
-    <string name="keyguard_plugged_in_dash_charging"><xliff:g id="percentage">%s</xliff:g> • Pengisian Daya Cepat Dash</string>
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Pengisian Daya Cepat (<xliff:g id="charging_time_left" example="4 jam 2 menit">%1$s</xliff:g> hingga penuh)</string>
+    <string name="keyguard_plugged_in_dash_charging"><xliff:g id="percentage">%s</xliff:g> • Pengisian Daya Cepat</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a warp charger. Should match keyguard_plugged_in_warp_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_warp_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Pengisian Warp (<xliff:g id="charging_time_left" example="4 jam 2 menit">%1$s</xliff:g> hingga penuh)</string>
     <string name="keyguard_plugged_in_warp_charging"><xliff:g id="percentage">%s</xliff:g> • Pengisian Warp</string>
@@ -33,4 +33,6 @@
     <!-- Indication on the keyguard that is shown when the device is charging with an oem fast power charger. Should match keyguard_plugged_in_turbo_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_oem_power_time"><xliff:g id="percentage">%2$s</xliff:g> • Pengisian Daya Cepat (<xliff:g id="charging_time_left" example="4 jam 2 menit">%1$s</xliff:g> hingga penuh)</string>
     <string name="keyguard_plugged_in_oem_charging"><xliff:g id="percentage">%s</xliff:g> • Pengisian Daya Cepat</string>
+    <!-- Face unlock -->
+    <string name="face_unlock_recognizing">Recognizing face...</string>
 </resources>
