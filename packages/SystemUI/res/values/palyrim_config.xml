@@ -20,7 +20,9 @@
 
     <!-- Enable face auth only when swiping security view -->
     <bool name="config_faceAuthOnlyOnSecurityView">false</bool>
-        <!-- Flag to enable framework dimming for udfps -->
+    <!-- Udfps vendor code -->
+    <integer name="config_udfpsVendorCode">0</integer>
+    <!-- Flag to enable framework dimming for udfps -->
     <bool name="config_udfpsFrameworkDimming">false</bool>
 
     <!-- Array of brightness-alpha lut for framework dimming -->
